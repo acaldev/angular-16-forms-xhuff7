@@ -1,0 +1,43 @@
+{
+  "name": "angular-16-jest",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "test": "jest",
+    "lint": "ng lint"
+  },
+  "dependencies": {
+    "@angular/animations": "16.0.0-next.0",
+    "@angular/common": "16.0.0-next.0",
+    "@angular/compiler": "16.0.0-next.0",
+    "@angular/core": "16.0.0-next.0",
+    "@angular/forms": "16.0.0-next.0",
+    "@angular/platform-browser": "16.0.0-next.0",
+    "@angular/platform-browser-dynamic": "16.0.0-next.0",
+    "@angular/router": "16.0.0-next.0",
+    "rxjs": "^7.8.0",
+    "tslib": "^2.5.0",
+    "zone.js": "^0.12.0"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "16.0.0-next.1",
+    "@angular-eslint/builder": "15.2.2-alpha.25+4fee6b0",
+    "@angular-eslint/eslint-plugin": "15.2.2-alpha.25+4fee6b0",
+    "@angular-eslint/eslint-plugin-template": "15.2.2-alpha.25+4fee6b0",
+    "@angular-eslint/schematics": "15.2.2-alpha.25+4fee6b0",
+    "@angular-eslint/template-parser": "15.2.2-alpha.25+4fee6b0",
+    "@angular/cli": "16.0.0-next.1",
+    "@angular/compiler-cli": "16.0.0-next.0",
+    "@types/jest": "^29.4.0",
+    "@typescript-eslint/eslint-plugin": "5.51.0",
+    "@typescript-eslint/parser": "5.51.0",
+    "eslint": "^8.34.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "jest": "^29.4.3",
+    "jest-preset-angular": "^13.0.0",
+    "prettier": "^2.8.8",
+    "prettier-eslint": "^15.0.1",
+    "typescript": "~4.9.5"
+  }
+}

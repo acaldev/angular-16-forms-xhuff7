@@ -1,0 +1,39 @@
+<h1>Thats a ugly code form, with simple error handling</h1>
+<form #formDir="ngForm" [formGroup]="form" (ngSubmit)="submit()">
+  <p>
+    Name:
+    <input type="text" formControlName="name" required />
+    <span
+      class="error"
+      *ngIf="formDir.submitted && this.form.get('name')?.errors?.['required'] || this.form.get('name')?.touched && this.form.get('name')?.errors?.['required']">
+      Required Name
+    </span>
+    <span
+      class="error"
+      *ngIf="formDir.submitted && this.form.get('name')?.errors?.['minlength'] || this.form.get('name')?.touched && this.form.get('name')?.errors?.['minlength']">
+      Min Name 10 characters
+    </span>
+  </p>
+  <p>
+    Email:
+    <input type="text" formControlName="mail" />
+    <span class="error" *ngIf="formDir.submitted && this.form.get('mail')?.errors?.['required'] || this.form.get('mail')?.touched && this.form.get('mail')?.errors?.['required']">
+      Required Email
+    </span>
+    <span class="error" *ngIf="formDir.submitted && this.form.get('mail')?.errors?.['email'] || this.form.get('mail')?.touched && this.form.get('mail')?.errors?.['email']">
+      Invalid Email
+    </span>
+  </p>
+  <p>
+    Message<br />
+    <textarea rows="10" cols="70" formControlName="message"></textarea>
+  </p>
+  <div class="error" *ngIf="formDir.submitted && this.form.get('message')?.errors?.['required'] || this.form.get('message')?.touched && this.form.get('message')?.errors?.['required']">
+    Required Message
+  </div>
+  <div class="error" *ngIf="formDir.submitted && this.form.get('message')?.errors?.['maxlength'] || this.form.get('message')?.touched && this.form.get('message')?.errors?.['maxlength']">
+    Message max 500
+  </div>
+  <button type="submit">Send</button>
+</form>
+<div>{{ result }}</div>

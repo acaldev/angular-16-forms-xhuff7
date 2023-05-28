@@ -1,10 +1,12 @@
 import { Component } from "@angular/core";
-import { FormBuilder } from "@angular/forms";
+import { TranslocoHttpLoader } from "./transloco-root.module";
 
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
 })
 export class AppComponent {
-  constructor(private fb: FormBuilder) {}
+  constructor(private translocoHttpLoader: TranslocoHttpLoader){
+    this.translocoHttpLoader.getTranslation('en');
+  }
 }

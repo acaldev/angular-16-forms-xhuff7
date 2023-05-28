@@ -1,0 +1,9 @@
+{
+  "legacy": {
+    "1": "This field is required.",
+    "2": "Email invalid",
+    "3": "Please enter at least {{ length }} characters.",
+    "4": "Please enter less than {{ length }} characters.",
+    "5": "The field {{name}} is required"
+  }
+}

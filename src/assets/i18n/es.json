@@ -1,0 +1,9 @@
+{
+  "legacy": {
+    "1": "Este campo es requerido.",
+    "2": "Email invalido.",
+    "3": "Porfavor introduce al menos {{ length }} caracteres.",
+    "4": "Porfavor introduce menos de {{ length }} caracteres.",
+    "5": "El campo {{name}} es requerido"
+  }
+}

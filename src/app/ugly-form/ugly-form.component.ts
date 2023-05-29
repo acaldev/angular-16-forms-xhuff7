@@ -4,7 +4,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 @Component({
   selector: 'app-ugly-form',
   templateUrl: './ugly-form.component.html',
-  styleUrls: ['./ugly-form.component.css']
+  styleUrls: ['./ugly-form.component.scss']
 })
 export class UglyFormComponent {
   result!: string;

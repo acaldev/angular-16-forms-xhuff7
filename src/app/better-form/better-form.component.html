@@ -1,20 +1,23 @@
-<h1>Thats a better form with error handling in ts code</h1>
-<form #formElm="ngForm" [formGroup]="form" (ngSubmit)="submit()">
-  <p>
-    Name:
-    <input type="text" formControlName="name" required />
-    <app-error-message controlName="name"  [formElm]="formElm"></app-error-message>
-  </p>
-  <p>
-    Email:
-    <input type="text" formControlName="mail" />
-    <app-error-message controlName="mail"  [formElm]="formElm"></app-error-message>
-  </p>
-  <p>
-    Message<br />
-    <textarea rows="10" cols="70" formControlName="message"></textarea>
-    <app-error-message controlName="message" [formElm]="formElm"></app-error-message>
-  </p>
-  <button type="submit">Send</button>
-</form>
-<div>{{ result }}</div>
+<hr />
+<section class="flex flex-col mx-96 mt-10">
+  <h1 class="my-5">Thats a better form with error handling in ts code</h1>
+  <form #formElm="ngForm" [formGroup]="form" (ngSubmit)="submit()">
+    <div>
+      <label>Name:</label>
+      <input type="text" formControlName="name" required />
+      <app-error-message controlName="name"></app-error-message>
+    </div>
+    <div>
+      <label>Email:</label>
+      <input type="text" formControlName="mail" />
+      <app-error-message controlName="mail"></app-error-message>
+    </div>
+    <div>
+      <label>Message:</label>
+      <textarea rows="10" cols="70" formControlName="message"></textarea>
+      <app-error-message controlName="message"></app-error-message>
+    </div>
+    <button type="submit" class="button my-5">Send</button>
+  </form>
+  <p>{{ result }}</p>
+</section>

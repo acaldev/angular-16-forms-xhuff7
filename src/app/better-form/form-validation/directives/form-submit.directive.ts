@@ -19,7 +19,7 @@ export class FormSubmitDirective {
     }
   }
 
-  private scrollToFirstInvalidControl(): void {
+  scrollToFirstInvalidControl(): void {
     const firsInvalidControl: HTMLElement =
       this.el.nativeElement.querySelectorAll('.ng-invalid')[0];
     firsInvalidControl.scrollIntoView({ behavior: 'smooth'});

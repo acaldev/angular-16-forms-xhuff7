@@ -1,3 +1,3 @@
 <ng-container *transloco="let t">
-    <p *ngIf="showError && hasError" class="error">{{ t(message, variables) }}</p>
+    <p *ngIf="showError" class="error text-red-500 text-xs italic">{{ t(message, variables) }}</p>
 </ng-container>

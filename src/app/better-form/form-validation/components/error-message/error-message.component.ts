@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import {
   AbstractControl,
   ControlContainer,
-  FormGroupDirective,
+  FormGroupDirective
 } from '@angular/forms';
 import { HashMap } from '@ngneat/transloco';
 
@@ -13,24 +13,31 @@ import { HashMap } from '@ngneat/transloco';
 })
 export class ErrorMessageComponent implements OnInit {
   @Input() controlName!: string;
-  @Input() formElm!: FormGroupDirective;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   control: AbstractControl<any, any> | null | undefined = null;
+  formGroupDirective: FormGroupDirective | null = null;
 
   constructor(private controlContainer: ControlContainer) {}
 
   ngOnInit(): void {
     this.control = this.controlContainer.control?.get(this.controlName);
+    this.formGroupDirective = this.findFormGroupDirective(this.controlContainer);
+  }
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  private findFormGroupDirective(controlContainer: ControlContainer | any): FormGroupDirective | null {
+    if (controlContainer instanceof FormGroupDirective) {
+      return controlContainer;
+    } else if (controlContainer && controlContainer.control) {
+      return this.findFormGroupDirective(controlContainer.control);
+    }
+    return null;
   }
 
   get showError(): boolean {
-    const controlDirty = this.control ? this.control.dirty : false;
-    const formSubmitted = this.formElm ? this.formElm.submitted : false;
+    const controlDirty = this.control ? this.control.invalid && this.control.dirty : false;
+    const formSubmitted = this.formGroupDirective && this.control ? this.control.invalid && this.formGroupDirective.submitted : false;
     return controlDirty || formSubmitted;
-  }
-
-  get hasError(): boolean {
-    return this.control ? this.control.invalid : false;
   }
 
   get message(): string {

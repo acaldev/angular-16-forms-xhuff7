@@ -5,7 +5,7 @@ import { Email, MaxLength, MinLength, Required } from './form-validation';
 @Component({
   selector: 'app-better-form',
   templateUrl: './better-form.component.html',
-  styleUrls: ['./better-form.component.css'],
+  styleUrls: ['./better-form.component.scss'],
 })
 export class BetterFormComponent {
   result!: string;
